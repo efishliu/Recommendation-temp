@@ -1,0 +1,9 @@
+USE zhaopin;
+
+CREATE TABLE form_edu_counts(
+form VARCHAR(100) NOT NULL,
+edu VARCHAR(20) NOT NULL,
+numbers VARCHAR(20) NOT NULL,
+PRIMARY KEY(form,edu)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8
+;

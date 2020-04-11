@@ -1,0 +1,13 @@
+USE zhaopin;
+
+CREATE TABLE form_edu_salary_fenbu(
+from VARCHAR(20) NOT NULL,
+edu VARCHAR(20) NOT NULL,
+onep VARCHAR(20) NOT NULL,
+threep VARCHAR(20) NOT NULL,
+fivep VARCHAR(20) NOT NULL,
+sevenp VARCHAR(20) NOT NULL,
+ninep VARCHAR(20) NOT NULL,
+PRIMARY KEY(city,industry)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8
+;

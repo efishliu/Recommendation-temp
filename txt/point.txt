@@ -1,0 +1,59 @@
+正则表达式匹配人数
+
+import re
+reg=u'(\d+)\u4eba'
+print re.findall(reg,u"200\u4eba")
+
+爬虫启动
+nohup scrapy crawl collect -s JOBDIR=crawl/status >/dev/null 2>&1 &
+
+sqoop mysql to hbase
+
+sqoop import --connect jdbc:mysql://master:3306/zhaopin --username 'root' -P --table jobsdata --columns id,job_name,job_inwhichcompany,min_salary,max_salary,salary,job_category,workplace,zhaopin_numbers,job_welfare,education_background,min_workexperience,job_form,job_releasetime,job_require,data_addtime,data_sourceweb --hbase-table jobsdata --column-family jobinfo --hbase-row-key id 
+
+sqoop mysql to hdfs
+sqoop import --connect jdbc:mysql://master:3306/zhaopin --username 'root' -P --table data --target-dir /data/ --m 1
+
+sqoop import --connect jdbc:mysql://master:3306/zhaopin --username 'root' -P --query 'select id,job_require from data where company_industry="计算机软件" and \$CONDITIONS' --target-dir /software_data/ --split-by id  --m 1
+
+
+hdfs删除文件和目录
+
+hdfs dfs -rm -R /xxx
+hdfs dfs -expunge
+
+hbase清空表数据
+truncate 'table'
+disable 'table'
+drop 'table'
+
+
+1、free -m 查看当前机器的内存使用情况
+
+mem 中可用资源 变得很少
+
+  echo 1 > /proc/sys/vm/drop_caches
+
+释放内存即可
+
+jieba导入自定义词典
+jieba.load_userdict("")
+
+swap空间的设置
+2、使用dd命令创建一个swap分区
+
+#  dd if=/dev/zero of=/doiido/swap bs=1024 count=8388608
+
+count的计算公式: count=SIZE*1024 (size以MB为单位）
+这样就建立一个/doiido/swap的分区文件，大小为8G
+
+3、格式化新建的分区
+#  mkswap /doiido/swap
+
+4、把新建的分区变成swap分区
+#  swapon /doiido/swap
+
+注:关闭SWAP分区命令为：#  swapoff /doiido/swap
+
+5、首先查看swap大小
+#  free

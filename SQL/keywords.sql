@@ -1,0 +1,8 @@
+USE zhaopin;
+
+CREATE TABLE keywords(
+id INT UNSIGNED NOT NULL,
+keywords TEXT,
+PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8
+;
